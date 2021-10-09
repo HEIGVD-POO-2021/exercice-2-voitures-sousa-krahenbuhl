@@ -14,14 +14,12 @@ public class Personne {
      * @param nom le nom de la personne
      */
     public Personne(String nom) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        this.nom = nom;
     }
 
     /** @returns le nom de la personne */
     public String getNom() {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        return nom;
     }
 
     /**
@@ -31,8 +29,9 @@ public class Personne {
      * @param Voiture la voiture a ajouter.
      */
     public void ajouterVoiture(Voiture v) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        if (v.getProprietaire() != null) v.getProprietaire().enleverVoiture(v);
+        v.setProprietaireSC(this);
+        ajouterVoitureSC(v);
     }
 
     /**
@@ -43,8 +42,30 @@ public class Personne {
      * @param Voiture la voiture a enlever.
      */
     public void enleverVoiture(Voiture v) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        enleverVoitureSC(v);
+        v.setProprietaireSC(null);
+    }
+
+    /**
+     * Méthode permettant d'ajouter une voiture à la liste des voitures de la personne. Méthode
+     * package (interne au package). Cette méthode ne maintient pas a cohérence.
+     *
+     * @param Voiture la voiture a ajouter.
+     */
+    void ajouterVoitureSC(Voiture v) {
+        if (!voitures.contains(v)) {
+            voitures.add(v);
+        }
+    }
+
+    /**
+     * Méthode permettant d'enlever une voiture à la liste des voitures de la personne. Méthode
+     * package (interne au package). Cette méthode ne maintient pas a cohérence.
+     *
+     * @param Voiture la voiture a enlever.
+     */
+    void enleverVoitureSC(Voiture v) {
+        voitures.remove(v);
     }
 
     /**
