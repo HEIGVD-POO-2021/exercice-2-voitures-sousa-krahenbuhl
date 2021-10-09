@@ -11,8 +11,7 @@ public class Voiture {
      * @param marque la marque de la voiture
      */
     public Voiture(String marque) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        this.marque = marque;
     }
 
     /**
@@ -21,8 +20,7 @@ public class Voiture {
      * @return la marque de la voiture
      */
     public String getMarque() {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        return marque;
     }
 
     /**
@@ -31,8 +29,7 @@ public class Voiture {
      * @returns le propriétaire de la voiture
      */
     public Personne getProprietaire() {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        return proprietaire;
     }
 
     /**
@@ -43,8 +40,20 @@ public class Voiture {
      *     de propriétaire
      */
     public void setProprietaire(Personne p) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        if (proprietaire != null) proprietaire.enleverVoitureSC(this);
+        if (p != null) p.ajouterVoitureSC(this);
+        proprietaire = p;
+    }
+
+    /**
+     * Définis ou redéfinis le propriétaire de la voiture SANS maintenir la cohérence. Méthode
+     * visible du package uniquement (déstinée à l'usage interne)
+     *
+     * @param p Le nouveau propriétaire de la voiture, ou null pour indiquer que la voiture n'a pas
+     *     de propriétaire
+     */
+    void setProprietaireSC(Personne p) {
+        proprietaire = p;
     }
 
     /**
