@@ -26,7 +26,7 @@ public class Voiture {
     /**
      * Retourne le propriétaire de la voiture
      *
-     * @returns le propriétaire de la voiture
+     * @return le propriétaire de la voiture
      */
     public Personne getProprietaire() {
         return proprietaire;
@@ -59,7 +59,7 @@ public class Voiture {
     /**
      * Représentation d'une personne en forme de String.
      *
-     * @returns une string représentant la personne avec les voitures qu'elle possède.
+     * @return une string représentant la voiture et son propriétaire.
      */
     public String toString() {
         return "Voiture "
