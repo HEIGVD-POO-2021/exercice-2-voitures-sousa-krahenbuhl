@@ -17,7 +17,7 @@ public class Personne {
         this.nom = nom;
     }
 
-    /** @returns le nom de la personne */
+    /** @return le nom de la personne */
     public String getNom() {
         return nom;
     }
@@ -39,7 +39,7 @@ public class Personne {
      * publique, peut être appellée par tous. Cette méthode maintient la cohérence. Après l'appel à
      * cette méthode la voiture n'aura plus de prioriétaire.
      *
-     * @param Voiture la voiture a enlever.
+     * @param Voiture la voiture à enlever.
      */
     public void enleverVoiture(Voiture v) {
         enleverVoitureSC(v);
@@ -50,7 +50,7 @@ public class Personne {
      * Méthode permettant d'ajouter une voiture à la liste des voitures de la personne. Méthode
      * package (interne au package). Cette méthode ne maintient pas a cohérence.
      *
-     * @param Voiture la voiture a ajouter.
+     * @param Voiture la voiture à ajouter.
      */
     void ajouterVoitureSC(Voiture v) {
         if (!voitures.contains(v)) {
@@ -62,7 +62,7 @@ public class Personne {
      * Méthode permettant d'enlever une voiture à la liste des voitures de la personne. Méthode
      * package (interne au package). Cette méthode ne maintient pas a cohérence.
      *
-     * @param Voiture la voiture a enlever.
+     * @param Voiture la voiture à enlever.
      */
     void enleverVoitureSC(Voiture v) {
         voitures.remove(v);
@@ -71,7 +71,7 @@ public class Personne {
     /**
      * Représentation d'une personne en forme de String.
      *
-     * @returns une string représentant la personne avec les voitures qu'elle possède.
+     * @return une string représentant la personne avec les voitures qu'elle possède.
      */
     public String toString() {
         if (voitures.isEmpty()) {
